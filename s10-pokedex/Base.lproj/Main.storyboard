@@ -4,6 +4,11 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="PokemonSolid.ttf">
+            <string>PokemonSolidNormal</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -22,9 +27,30 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZW9-6o-mip">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="55"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokedex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tr4-fS-5DK">
+                                        <rect key="frame" x="237" y="8" width="127" height="39"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="127" id="AGB-1P-YJQ"/>
+                                            <constraint firstAttribute="height" constant="39" id="GQT-hf-iMv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="PokemonSolidNormal" family="Pokemon Solid" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTk-HQ-XdE">
+                                        <rect key="frame" x="546" y="12" width="40" height="40"/>
+                                        <state key="normal" image="audio"/>
+                                    </button>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" onImage="audio" offImage="mute" translatesAutoresizingMaskIntoConstraints="NO" id="85x-jD-OZm">
+                                        <rect key="frame" x="447" y="12" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.34509803921568627" blue="0.33333333333333331" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
+                                    <constraint firstItem="tr4-fS-5DK" firstAttribute="centerX" secondItem="ZW9-6o-mip" secondAttribute="centerX" id="8Kt-Xh-Cw4"/>
                                     <constraint firstAttribute="height" constant="55" id="Uxv-c3-Ion"/>
+                                    <constraint firstAttribute="bottom" secondItem="tr4-fS-5DK" secondAttribute="bottom" constant="8" id="shC-5c-gob"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5k3-OJ-jzj">
@@ -120,6 +146,8 @@
     </scenes>
     <resources>
         <image name="297" width="120" height="120"/>
+        <image name="audio" width="40" height="40"/>
         <image name="bg" width="1920" height="1200"/>
+        <image name="mute" width="40" height="40"/>
     </resources>
 </document>
