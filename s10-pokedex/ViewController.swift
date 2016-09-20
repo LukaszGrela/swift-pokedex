@@ -19,8 +19,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for i in 1...30 {
-            pokemons.append(Pokemon(name: "poke-\(i)", id: i))
+        for i in 1...718 {
+            pokemons.append(Pokemon(name: "pokemon name-\(i)", id: i))
         }
         
         collection.delegate = self

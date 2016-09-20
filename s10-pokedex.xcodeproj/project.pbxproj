@@ -16,6 +16,7 @@
 		DEE0063C1D91445400D817A2 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0063B1D91445400D817A2 /* Pokemon.swift */; };
 		DEE0063F1D91460A00D817A2 /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DEE0063E1D91460A00D817A2 /* music.mp3 */; };
 		DEE006411D9149E400D817A2 /* PokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE006401D9149E400D817A2 /* PokeCell.swift */; };
+		DEE006431D915B3800D817A2 /* XLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE006421D915B3700D817A2 /* XLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		DEE0063B1D91445400D817A2 /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pokemon.swift; path = Model/Pokemon.swift; sourceTree = "<group>"; };
 		DEE0063E1D91460A00D817A2 /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 		DEE006401D9149E400D817A2 /* PokeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PokeCell.swift; path = View/PokeCell.swift; sourceTree = "<group>"; };
+		DEE006421D915B3700D817A2 /* XLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XLabel.swift; path = View/XLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				DEE0062C1D913A1F00D817A2 /* LaunchScreen.storyboard */,
 				DEE006251D913A1F00D817A2 /* ViewController.swift */,
 				DEE006401D9149E400D817A2 /* PokeCell.swift */,
+				DEE006421D915B3700D817A2 /* XLabel.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEE006411D9149E400D817A2 /* PokeCell.swift in Sources */,
+				DEE006431D915B3800D817A2 /* XLabel.swift in Sources */,
 				DEE006261D913A1F00D817A2 /* ViewController.swift in Sources */,
 				DEE006241D913A1F00D817A2 /* AppDelegate.swift in Sources */,
 				DEE0063C1D91445400D817A2 /* Pokemon.swift in Sources */,
