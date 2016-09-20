@@ -55,13 +55,37 @@
 			isa = PBXGroup;
 			children = (
 				DEE006231D913A1F00D817A2 /* AppDelegate.swift */,
-				DEE006251D913A1F00D817A2 /* ViewController.swift */,
-				DEE006271D913A1F00D817A2 /* Main.storyboard */,
+				DEE006381D913CAE00D817A2 /* Model */,
+				DEE006371D913CAA00D817A2 /* View */,
+				DEE006361D913CA400D817A2 /* Controller */,
 				DEE0062A1D913A1F00D817A2 /* Assets.xcassets */,
-				DEE0062C1D913A1F00D817A2 /* LaunchScreen.storyboard */,
 				DEE0062F1D913A1F00D817A2 /* Info.plist */,
 			);
 			path = "s10-pokedex";
+			sourceTree = "<group>";
+		};
+		DEE006361D913CA400D817A2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		DEE006371D913CAA00D817A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DEE006271D913A1F00D817A2 /* Main.storyboard */,
+				DEE0062C1D913A1F00D817A2 /* LaunchScreen.storyboard */,
+				DEE006251D913A1F00D817A2 /* ViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		DEE006381D913CAE00D817A2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,6 +95,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DEE006321D913A1F00D817A2 /* Build configuration list for PBXNativeTarget "s10-pokedex" */;
 			buildPhases = (
+				DEE006351D913A3900D817A2 /* ShellScript */,
 				DEE0061C1D913A1E00D817A2 /* Sources */,
 				DEE0061D1D913A1E00D817A2 /* Frameworks */,
 				DEE0061E1D913A1E00D817A2 /* Resources */,
@@ -129,6 +154,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DEE006351D913A3900D817A2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"\n\n# if CFBundleDate is string then this returns iso8601 format\n#date=$(date +\"%Y-%m-%dT%H:%M:%S.000Z\")\n\n# if CFBundleDate is NSDate then this format is correct\ndate=$(date -u +\"%a %b %d %T GMT %Y\")\n/usr/libexec/PlistBuddy -c \"Set :CFBundleDate $date\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DEE0061C1D913A1E00D817A2 /* Sources */ = {
