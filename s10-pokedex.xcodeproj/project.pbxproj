@@ -20,6 +20,7 @@
 		DEE006461D915EC900D817A2 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE006451D915EC900D817A2 /* CSV.swift */; };
 		DEE006481D91634600D817A2 /* PokemonSolid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEE006471D91634600D817A2 /* PokemonSolid.ttf */; };
 		DEE0064A1D918C6800D817A2 /* XSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE006491D918C6800D817A2 /* XSearchBar.swift */; };
+		DEE0064C1D9194D100D817A2 /* PokemonDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0064B1D9194D100D817A2 /* PokemonDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		DEE006451D915EC900D817A2 /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSV.swift; path = Utils/CSV.swift; sourceTree = "<group>"; };
 		DEE006471D91634600D817A2 /* PokemonSolid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PokemonSolid.ttf; sourceTree = "<group>"; };
 		DEE006491D918C6800D817A2 /* XSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XSearchBar.swift; path = View/XSearchBar.swift; sourceTree = "<group>"; };
+		DEE0064B1D9194D100D817A2 /* PokemonDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PokemonDetailVC.swift; path = Controller/PokemonDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,8 @@
 		DEE006361D913CA400D817A2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DEE006251D913A1F00D817A2 /* ViewController.swift */,
+				DEE0064B1D9194D100D817A2 /* PokemonDetailVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -94,7 +98,6 @@
 			children = (
 				DEE006271D913A1F00D817A2 /* Main.storyboard */,
 				DEE0062C1D913A1F00D817A2 /* LaunchScreen.storyboard */,
-				DEE006251D913A1F00D817A2 /* ViewController.swift */,
 				DEE006401D9149E400D817A2 /* PokeCell.swift */,
 				DEE006421D915B3700D817A2 /* XLabel.swift */,
 				DEE006491D918C6800D817A2 /* XSearchBar.swift */,
@@ -224,6 +227,7 @@
 				DEE006431D915B3800D817A2 /* XLabel.swift in Sources */,
 				DEE006461D915EC900D817A2 /* CSV.swift in Sources */,
 				DEE006261D913A1F00D817A2 /* ViewController.swift in Sources */,
+				DEE0064C1D9194D100D817A2 /* PokemonDetailVC.swift in Sources */,
 				DEE006241D913A1F00D817A2 /* AppDelegate.swift in Sources */,
 				DEE0063C1D91445400D817A2 /* Pokemon.swift in Sources */,
 			);

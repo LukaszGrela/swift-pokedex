@@ -83,7 +83,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("prepareForSegue \(sender)")
+        if segue.identifier == "PokemonDetailVC" {
+            print("segue.identifier \(segue.identifier)")
+            if let vc = segue.destinationViewController as? PokemonDetailVC {
+                if let poke = sender as? Pokemon {
+                    vc.pokemon = poke
+                }
+            }
+        }
+    }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         //
@@ -105,6 +115,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        //
+        let list:[Pokemon] = isFiltered ? filteredPokemons:pokemons;
+        
+        let poke:Pokemon = list[indexPath.row]
+        
+        performSegueWithIdentifier("PokemonDetailVC", sender: poke)
         //
     }
     
