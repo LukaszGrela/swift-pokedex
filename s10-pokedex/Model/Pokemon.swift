@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Pokemon {
+class Pokemon: CustomStringConvertible {
     
     private var _name:String!
     private var _pokedexId:Int!
@@ -29,4 +29,7 @@ class Pokemon {
     }
     
     
+    var description: String {
+        return "Pokemon, name=\(self.name), pokedexId=\(self.pokedexId)"
+    }
 }
