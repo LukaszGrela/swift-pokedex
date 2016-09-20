@@ -19,6 +19,7 @@
 		DEE006431D915B3800D817A2 /* XLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE006421D915B3700D817A2 /* XLabel.swift */; };
 		DEE006461D915EC900D817A2 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE006451D915EC900D817A2 /* CSV.swift */; };
 		DEE006481D91634600D817A2 /* PokemonSolid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEE006471D91634600D817A2 /* PokemonSolid.ttf */; };
+		DEE0064A1D918C6800D817A2 /* XSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE006491D918C6800D817A2 /* XSearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		DEE006421D915B3700D817A2 /* XLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XLabel.swift; path = View/XLabel.swift; sourceTree = "<group>"; };
 		DEE006451D915EC900D817A2 /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSV.swift; path = Utils/CSV.swift; sourceTree = "<group>"; };
 		DEE006471D91634600D817A2 /* PokemonSolid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PokemonSolid.ttf; sourceTree = "<group>"; };
+		DEE006491D918C6800D817A2 /* XSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XSearchBar.swift; path = View/XSearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				DEE006251D913A1F00D817A2 /* ViewController.swift */,
 				DEE006401D9149E400D817A2 /* PokeCell.swift */,
 				DEE006421D915B3700D817A2 /* XLabel.swift */,
+				DEE006491D918C6800D817A2 /* XSearchBar.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEE0064A1D918C6800D817A2 /* XSearchBar.swift in Sources */,
 				DEE006411D9149E400D817A2 /* PokeCell.swift in Sources */,
 				DEE006431D915B3800D817A2 /* XLabel.swift in Sources */,
 				DEE006461D915EC900D817A2 /* CSV.swift in Sources */,

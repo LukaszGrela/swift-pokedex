@@ -9,13 +9,17 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, XSearchBarDelegate {
     
+    @IBOutlet weak var searchBar: XSearchBar!
     @IBOutlet weak var collection:UICollectionView!
     
     @IBOutlet weak var audioBtn: UIButton!
     
     var pokemons = [Pokemon]()
+    var filteredPokemons = [Pokemon]()
+    var isFiltered = false
+    
     var audioPlaying = true
     var musicPlayer: AVAudioPlayer!
     
@@ -23,6 +27,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        searchBar.delegate = self
+        searchBar.returnKeyType = UIReturnKeyType.Done
+        
         
         collection.delegate = self
         collection.dataSource = self
@@ -89,7 +96,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         
         
-        cell.configureCell(pokemons[indexPath.row])
+        var list:[Pokemon] = isFiltered ? filteredPokemons:pokemons;
+        
+        cell.configureCell(list[indexPath.row])
         
         
         return cell
@@ -101,7 +110,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //
-        return pokemons.count
+        let list:[Pokemon] = isFiltered ? filteredPokemons:pokemons;
+        //
+        return list.count
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -110,6 +121,41 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSize(width: 105, height: 105)
+    }
+    
+    // MARK: UISearchBarDelegate
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil ||  (searchBar.text?.isEmpty)! {
+            isFiltered = false
+            
+        } else {
+            isFiltered = true
+            let term = searchBar.text!.lowercaseString
+            
+            filteredPokemons = pokemons.filter({ (poke:Pokemon) -> Bool in
+                //
+             return poke.name.rangeOfString(term) != nil
+            })
+ 
+            //filteredPokemons = pokemons.filter({$0.name.rangeOfString(term) != nil})
+        }
+        collection.reloadData()
+    }
+    
+    
+    func searchBarShouldClear(searchBar: UISearchBar) -> Bool {
+        
+        performSelector(#selector(ViewController.hideKeyboardWithSearchBar), withObject: nil, afterDelay: 0)
+        
+        return true
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+    func hideKeyboardWithSearchBar() {
+        searchBar.resignFirstResponder()
+        view.endEditing(true)
     }
 }
 

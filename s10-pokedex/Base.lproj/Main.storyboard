@@ -118,7 +118,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="CJ5-wb-uEp">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for Pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="CJ5-wb-uEp" customClass="XSearchBar" customModule="s10_pokedex" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -144,6 +144,7 @@
                     <connections>
                         <outlet property="audioBtn" destination="gTk-HQ-XdE" id="CQV-ps-ACO"/>
                         <outlet property="collection" destination="5k3-OJ-jzj" id="ipr-uQ-gMW"/>
+                        <outlet property="searchBar" destination="CJ5-wb-uEp" id="paT-vj-HpO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDate</key>
-	<date>2016-09-20T14:05:40Z</date>
+	<date>2016-09-20T15:53:50Z</date>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -21,7 +21,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>22</string>
+	<string>35</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIAppFonts</key>
