@@ -38,18 +38,24 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTk-HQ-XdE">
-                                        <rect key="frame" x="546" y="12" width="40" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTk-HQ-XdE">
+                                        <rect key="frame" x="562" y="17" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="ARq-jG-TDx"/>
+                                            <constraint firstAttribute="width" constant="30" id="ylS-oH-R8x"/>
+                                        </constraints>
                                         <state key="normal" image="audio"/>
+                                        <connections>
+                                            <action selector="audioButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZUY-Ay-cF9"/>
+                                        </connections>
                                     </button>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" onImage="audio" offImage="mute" translatesAutoresizingMaskIntoConstraints="NO" id="85x-jD-OZm">
-                                        <rect key="frame" x="447" y="12" width="51" height="31"/>
-                                    </switch>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.34509803921568627" blue="0.33333333333333331" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstItem="tr4-fS-5DK" firstAttribute="centerX" secondItem="ZW9-6o-mip" secondAttribute="centerX" id="8Kt-Xh-Cw4"/>
                                     <constraint firstAttribute="height" constant="55" id="Uxv-c3-Ion"/>
+                                    <constraint firstAttribute="trailing" secondItem="gTk-HQ-XdE" secondAttribute="trailing" constant="8" id="gRx-Hz-3TB"/>
+                                    <constraint firstAttribute="bottom" secondItem="gTk-HQ-XdE" secondAttribute="bottom" constant="8" id="i3K-Zd-kOo"/>
                                     <constraint firstAttribute="bottom" secondItem="tr4-fS-5DK" secondAttribute="bottom" constant="8" id="shC-5c-gob"/>
                                 </constraints>
                             </view>
@@ -136,6 +142,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="audioBtn" destination="gTk-HQ-XdE" id="CQV-ps-ACO"/>
                         <outlet property="collection" destination="5k3-OJ-jzj" id="ipr-uQ-gMW"/>
                     </connections>
                 </viewController>
@@ -148,6 +155,5 @@
         <image name="297" width="120" height="120"/>
         <image name="audio" width="40" height="40"/>
         <image name="bg" width="1920" height="1200"/>
-        <image name="mute" width="40" height="40"/>
     </resources>
 </document>
