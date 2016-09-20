@@ -18,16 +18,37 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        for i in 1...718 {
-            pokemons.append(Pokemon(name: "pokemon name-\(i)", id: i))
-        }
+
         
         collection.delegate = self
         collection.dataSource = self
+        
+        parsePokemonCSV()
     }
 
 
+    func parsePokemonCSV() {
+        
+        //for i in 1...718 {
+        //    pokemons.append(Pokemon(name: "pokemon name-\(i)", id: i))
+        //}
+        
+        let path = NSBundle.mainBundle().pathForResource("pokemon", ofType: "csv")!
+        
+        do {
+            let csv = try CSV(contentsOfURL: path)
+            let rows = csv.rows
+            
+            for row in rows {
+                pokemons.append(Pokemon(data: row))
+            }
+            
+        } catch let err as NSError {
+            print(err.debugDescription)
+        }
+    }
+    
+    
     
     
     

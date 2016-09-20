@@ -20,6 +20,13 @@ class Pokemon: CustomStringConvertible {
     }
     
     
+    convenience init(data:Dictionary<String, String>) {
+        let pokeId = Int(data["id"]!)!
+        let name = data["identifier"]!
+        self.init(name: name, id:pokeId)
+    }
+    
+    
     var name:String {
         return _name
     }
