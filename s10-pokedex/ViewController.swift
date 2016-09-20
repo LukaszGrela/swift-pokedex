@@ -9,6 +9,8 @@
 import UIKit
 import AVFoundation
 
+let KEY_AUDIO_STATE = "audio-state"
+
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, XSearchBarDelegate {
     
     @IBOutlet weak var searchBar: XSearchBar!
@@ -20,7 +22,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var filteredPokemons = [Pokemon]()
     var isFiltered = false
     
-    var audioPlaying = true
     var musicPlayer: AVAudioPlayer!
     
     
@@ -33,7 +34,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         collection.delegate = self
         collection.dataSource = self
+        
         initAudio()
+        
         parsePokemonCSV()
     }
 
@@ -60,10 +63,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     func initAudio(){
         do {
+            let audioPlaying = NSUserDefaults.standardUserDefaults().boolForKey(KEY_AUDIO_STATE)
             let path = NSBundle.mainBundle().pathForResource("music", ofType: "mp3")!
             musicPlayer = try AVAudioPlayer(contentsOfURL: NSURL(string: path)!)
             musicPlayer.numberOfLoops = -1
-            musicPlayer.play()
+            if audioPlaying {
+                musicPlayer.play()
+            }
+            updateAudioBtn()
             
         } catch let err as NSError {
             print(err.debugDescription)
@@ -72,14 +79,28 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     
     }
-    @IBAction func audioButtonPressed(sender: UIButton) {
+    func toggleAudio() {
+        
         if musicPlayer.playing {
             musicPlayer.stop()
-            sender.setImage(UIImage(named: "mute"), forState: .Normal)
+            audioBtn.setImage(UIImage(named: "mute"), forState: .Normal)
         } else {
             musicPlayer.play()
-            sender.setImage(UIImage(named: "audio"), forState: .Normal)
+            audioBtn.setImage(UIImage(named: "audio"), forState: .Normal)
         }
+        updateAudioBtn()
+        //store setting
+        NSUserDefaults.standardUserDefaults().setBool(musicPlayer.playing, forKey: KEY_AUDIO_STATE)
+    }
+    func updateAudioBtn(){
+        if musicPlayer.playing {
+            audioBtn.setImage(UIImage(named: "audio"), forState: .Normal)
+        } else {
+            audioBtn.setImage(UIImage(named: "mute"), forState: .Normal)
+        }
+    }
+    @IBAction func audioButtonPressed(sender: UIButton) {
+        toggleAudio()
     }
     
     
