@@ -28,7 +28,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5k3-OJ-jzj">
-                                <rect key="frame" x="20" y="119" width="560" height="461"/>
+                                <rect key="frame" x="20" y="99" width="560" height="481"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1bV-b9-WHM">
                                     <size key="itemSize" width="110" height="110"/>
@@ -90,7 +90,7 @@
                             <constraint firstItem="CJ5-wb-uEp" firstAttribute="top" secondItem="ZW9-6o-mip" secondAttribute="bottom" id="Jw7-Ee-VRc"/>
                             <constraint firstAttribute="trailing" secondItem="CJ5-wb-uEp" secondAttribute="trailing" id="Wz7-xZ-uEV"/>
                             <constraint firstAttribute="trailing" secondItem="ZW9-6o-mip" secondAttribute="trailing" id="bVG-PX-wL8"/>
-                            <constraint firstItem="5k3-OJ-jzj" firstAttribute="top" secondItem="CJ5-wb-uEp" secondAttribute="bottom" constant="20" id="feB-qR-8bD"/>
+                            <constraint firstItem="5k3-OJ-jzj" firstAttribute="top" secondItem="CJ5-wb-uEp" secondAttribute="bottom" id="feB-qR-8bD"/>
                             <constraint firstItem="CJ5-wb-uEp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gzj-RI-xVi"/>
                             <constraint firstItem="bJE-s4-MKB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="j2Q-9w-qul"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5k3-OJ-jzj" secondAttribute="bottom" constant="20" id="qs5-7G-3IN"/>
@@ -101,6 +101,9 @@
                             <constraint firstItem="5k3-OJ-jzj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="wmu-7T-elD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collection" destination="5k3-OJ-jzj" id="ipr-uQ-gMW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
