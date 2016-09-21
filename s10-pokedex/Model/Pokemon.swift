@@ -38,6 +38,37 @@ class Pokemon: CustomStringConvertible {
     }
     
     
+    var pokemonDescription:String {
+        return ""
+    }
+    
+    var type:String {
+        return ""
+    }
+    
+    var defense:Int {
+        return 0
+    }
+    
+    var height:Double {
+        return 0.0
+    }
+    
+    var weight:Double {
+        return 0.0
+    }
+    
+    var attack:Int {
+        return 0
+    }
+    
+    var nextEvolution:String {
+        return ""
+    }
+    
+    
+    
+    
     var description: String {
         return "Pokemon, name=\(self.name), pokedexId=\(self.pokedexId)"
     }
